@@ -6,7 +6,7 @@ Placeholder of the source codes in CVPR 2019:
 ```
 @inproceedings{adgcn_cvpr19,
   author    = {Jia-Xing Zhong and
-	             Nannan Li and
+	       Nannan Li and
                Weijie Kong and
                Shan Liu and
                Thomas H. Li and
