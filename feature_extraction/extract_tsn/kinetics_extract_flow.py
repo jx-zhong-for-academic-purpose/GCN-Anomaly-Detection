@@ -24,7 +24,7 @@ from pyActionRecog.action_caffe import CaffeNet
 step = 5
 dense_sample = True
 output_folder = "../flow_features"
-caffemodel = "./models/_iter_1440.caffemodel"
+caffemodel = "./models/flow_iter_1400.caffemodel"
 
 def build_net():
     global net
