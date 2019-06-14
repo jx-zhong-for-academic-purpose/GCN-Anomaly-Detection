@@ -23,7 +23,7 @@ from pyActionRecog.action_caffe import CaffeNet
 step = 16
 dense_sample = True
 output_folder = "../c3d_features/"
-caffemodel = "./models/_iter_1000.caffemodel"
+caffemodel = "./models/c3d_iter_1000.caffemodel"
 
 
 def build_net():
