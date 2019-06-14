@@ -24,7 +24,7 @@ from pyActionRecog.action_caffe import CaffeNet
 step = 5
 dense_sample = True
 output_folder = "../rgb_features"
-caffemodel = "./models/_iter_400.caffemodel"
+caffemodel = "./models/rgb_iter_1000.caffemodel"
 
 
 def build_net():
