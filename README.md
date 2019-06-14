@@ -2,7 +2,8 @@
 
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-Placeholder of the source codes in CVPR 2019:
+
+Our source codes in CVPR 2019:
 
 ## Graph Convolutional Label Noise Cleaner: Train a Plug-and-play Action Classifier for Anomaly Detection
 
@@ -20,4 +21,4 @@ Placeholder of the source codes in CVPR 2019:
 }
 ```
 
-I am rushing for NeurIPS 2019, and our source codes will be released after the deadline.
+Our codes for feartue extraction have been released! The training codes will be available as soon as possible. 
