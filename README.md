@@ -21,4 +21,4 @@ Our source codes in CVPR 2019:
 }
 ```
 
-Our codes for feature extraction have been released! The training codes will be available as soon as possible. 
+Our codes for feature extraction have been released! The training codes are also available as in the folder pygcn. 
