@@ -18,9 +18,6 @@ frames_per_feat = 1
 if __name__ == '__main__':
     feature_path = "/home/zjx/data/UCF_Crimes/C3D_features/c3d_fc6_features.hdf5"
     ucf_crime = UCFCrime(feature_path, graph_generator)
-    ucf_crime_test = UCFCrimeTest(feature_path, graph_generator)
-    train_loader = DataLoader(dataset=ucf_crime, batch_size=1, shuffle=True, num_workers=8, collate_fn=collate_video)
-    test_loader = DataLoader(dataset=ucf_crime_test, num_workers=4, collate_fn=collate_video)
 
     model = NoiseFilter(nfeat=4096, nclass=2)
     criterion = CrossEntropyLoss()
