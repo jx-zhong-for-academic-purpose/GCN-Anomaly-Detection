@@ -11,7 +11,6 @@ from utils import graph_generator
 from utils import collate_video
 from models import NoiseFilter
 from dataset import UCFCrime
-from dataset_test import UCFCrimeTest
 
 gpu_id = 1
 iter_size = 16
@@ -60,29 +59,4 @@ if __name__ == '__main__':
                 avg_loss_train = 0
                 optimizer.step()
 
-        model.eval()
-        gt = []
-        ans = []
-        for test_video in test_loader:
-            (feat, adj), is_normal, anomaly_score, vid = test_video
-            if len(anomaly_score) > 32000:
-                continue
-            feat, adj, is_normal = Variable(feat), Variable(adj), Variable(is_normal)
-
-            if gpu_id != -1:
-                feat = feat.cuda(gpu_id)
-                adj = adj.cuda(gpu_id)
-                is_normal = is_normal.cuda(gpu_id)
-            pred = softmax(model(feat, adj), dim=2)
-            cur_gt = anomaly_score.numpy().flatten().tolist()
-            ans_seg = pred.cpu().data.numpy().reshape(-1, 2)[:, 0].tolist()
-            cur_answer = np.zeros(len(cur_gt)).tolist()
-            for i in range(len(ans_seg)):
-                for j in range(frames_per_feat):
-                    cur_answer[i * frames_per_feat + j] = ans_seg[i]
-
-            gt.extend(cur_gt)
-            ans.extend(cur_answer)
-
-        print("Test AUC@ROC: %.4f" % roc_auc_score(gt, ans))
         print("Epoch %d done !" % epoch)
